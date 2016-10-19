@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<script src='js/jquery.min.js' type='text/javascript'></script>
+</head>
+<body>
+	<iframe src="iframe-sub.html"></iframe>
+	<div id="get">get</div>
+	<div id="log"></div>
+	<script>
+		var kk = 0;
+		$('#get').on('click',function(){
+			$('#log').text(kk);
+		});
+	</script>
+</body>
+</html>	

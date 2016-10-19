@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="text/html;charset=utf-8" http-equiv="content-type">
+	<meta name="referrer" content="always">
+	<meta content="#2932e1" name="theme-color">
+	<title>员动力</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		body{color:#333; background-color:#1d8bd8; font-family:'microsoft yahei','Arial', 'Helvetica', 'sans-serif';}
+		.article{width: 100%;height: 100%;position: absolute;left: 0;top: 0;background:url(images/bg.png) no-repeat center center;}
+		.article .footer{position: absolute;bottom:0;left: 0;width:100%;height:60px;text-align:center;background-color: #0f64a5;color: #629cd7;font-size: 12px;}
+		.article .footer p:first-child{margin: 12px auto 8px;}
+
+		.article .form{position:absolute;width: 450px;height: 360px;top: 50%;left: 50%;margin: -230px 0 0 -225px;}
+		.article .form .f_header{font-size: 36px;color:#e3f2ff;}
+		.article .form .f_header>img{display: inline-block;vertical-align: middle;}
+		.article .form .f_header>span{display: inline-block;vertical-align: middle;}
+		.article .form .f_cont{background-color:#e8f4ff;border-radius: 3px;border: 1px solid #fff;border-top-width: 2px;padding: 34px 0 42px 0;margin: 28px 0 0;box-shadow: 0 0 5px #888;-webkit-box-shadow: 0 0 5px #888;-moz-box-shadow: 0 0 5px #888;-ms-box-shadow: 0 0 5px #888;-o-box-shadow: 0 0 5px #888;}
+		.article .form .f_cont>div{margin: 0 auto;}
+		.article .form .f_cont .f_col{border: 1px solid #77aadd;border-radius: 3px;padding: 6px 10px;width: 290px;margin:0 auto 18px;background-color: #fff;}
+		.article .form .f_cont .f_col>input,.article .form .f_cont .f_col>img{display: inline-block;vertical-align: middle;}
+		.article .form .f_cont .f_col>input{border: none;height: 24px;padding: 0 0 0 8px;color: #999899;margin: 0 0 0 4px;}
+		.article .form .f_cont .f_pw>img{margin: 0 3px;}
+		.article .form .f_cont .tips{width: 310px;margin: 10px auto;font-size: 14px;color: #ff6600;display: none;}
+		.article .form .f_cont .tips_show{display: block;}
+		.article .form .f_cont .tips>img,.article .form .f_cont .tips>span{display: inline-block;vertical-align: middle;margin: 0 6px 0 0;}
+		.article .form .f_cont .logo_btn{text-align: center;height: 45px;line-height: 45px;background-color:#18a4f5;color: #fff;cursor: pointer;border-radius: 3px;width: 310px;}
+	</style>
+</head>
+<body>
+	<div class="article">
+		<div class="form">
+			<div class="f_header"><img src="images/logo.png" alt=""><span>员动力后台管理系统</span></div>
+			<div class="f_cont">
+				<div class="f_col"><img src="images/user.png" alt=""><input type="text" placeholder="账户名"></div>
+				<div class="f_col f_pw"><img src="images/pw.png" alt=""><input type="text" placeholder="密码"></div>
+				<div class="tips"><img src="images/warning.png" alt=""><span></span></div>
+				<div class="logo_btn">登录</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>Copyright©2016 www.ydl001.cn. All Rights Reserved. </p>
+			<p>深圳市员动力科技有限公司</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
+	<script>
+		$(function(){
+			$('.logo_btn').click(function(){
+				var l = true;
+				$('.f_cont .f_col input').each(function(){
+					if(l){
+						if($(this).val()==''){
+							$('.tips>span').text($(this).attr('placeholder')+'不能为空');
+							$('.tips').addClass('tips_show');
+							$(this).focus();
+							l = false;
+						}
+					}
+				});
+				if(l){
+					$('.tips>span').text('账户名或密码错误');
+					$('.tips').addClass('tips_show');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
